@@ -18,13 +18,6 @@ file_path = r"C:\Users\Lenovo\Downloads\P4-Implementation-of-Chatbot-using-NLP-m
 
 with open(file_path, "r") as file:
     intents = json.load(file)
-
-# Create the vectorizer and classifier
-vectorizer = TfidfVectorizer(ngram_range=(1, 4))
-clf = LogisticRegression(random_state=0, max_iter=10000)
-
-# Preprocess the data
-tags = []
 patterns = []
 for intent in intents:
     for pattern in intent['patterns']:
